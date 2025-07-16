@@ -43,6 +43,7 @@
         <button class="button" onclick="openModal('sutureRemovalModal')">Suture Removal</button>
         <button class="button" onclick="openModal('RCTModal')">RCT</button>
         <button class="button" onclick="openModal('OrthoCheckModal')">Ortho Check</button>
+        <button class="button" onclick="confirmProcedure('BUTTON')">BUTTON</button>
     </div>
 
     <div class="button-container2">
@@ -848,6 +849,11 @@
            let note = '';
            const today = new Date();
            const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+           if (procedure == 'BUTTON') {
+            note = 'Pink Button!'
+            
+           }
 
            if (procedure === 'Filling') {
                const assistant = document.getElementById('fillingAssistantDropdown').value;
