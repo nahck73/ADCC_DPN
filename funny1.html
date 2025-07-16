@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Funny Dental Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffdf7;
+      text-align: center;
+      padding: 50px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #444;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="McKenna2.jpg">
+
+  <div class="message">
+    "Hang in there just a few more hours!"
+  </div>
+
+ <h1>Time Remaining Until Friday</h1>
+  <div id="countdown">Loading...</div>
+
+  <script>
+    function updateCountdown() {
+      const now = new Date();
+      const day = now.getDay();
+      const daysUntilFriday = (5 - day + 7) % 7 || 7;
+
+      const nextFriday = new Date(now);
+      nextFriday.setDate(now.getDate() + daysUntilFriday);
+      nextFriday.setHours(0, 0, 0, 0);
+
+      const diff = nextFriday - now;
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      document.getElementById('countdown').textContent =
+        `${hours} hour${hours !== 1 ? 's' : ''}, ` +
+        `${minutes} minute${minutes !== 1 ? 's' : ''}, ` +
+        `${seconds} second${seconds !== 1 ? 's' : ''}`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000); // Update every second
+      </script>
+
+</body>
+</html>

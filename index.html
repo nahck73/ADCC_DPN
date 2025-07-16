@@ -9,6 +9,12 @@
         .button-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
         .button { padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer; border-radius: 5px; }
         .button:hover { background-color: #0056b3; }
+
+        .button-container2 {position: absolute; bottom: 10px; right: 10px; }
+        .button-dontclick {background-color: rgb(211, 0, 200); color:aliceblue; padding: 10px 20px; border: none; cursor: pointer; border-radius: 10px;}
+        .button-dontclick:hover {background-color:#c9302c;}
+
+
         #note { margin-top: 20px; width: 80%; height: 400px; padding: 10px; }
         
         /* Modal Styles */
@@ -19,7 +25,7 @@
     </style>
 </head>
 <body>
-    <h2>ADCC Dental Progress Notes Generator</h2>
+    <h2>ADCC Progress Notes Generator</h2>
 
     <!-- Procedure Buttons Container -->
     <div class="button-container">
@@ -39,6 +45,11 @@
         <button class="button" onclick="openModal('OrthoCheckModal')">Ortho Check</button>
     </div>
 
+    <div class="button-container2">
+        <a href="funny1.html">
+            <button class="button-dontclick">???</button>
+        </a>
+    </div>
     <!-- Filling Modal -->
 <div class="modal" id="fillingModal">
     <div class="modal-content">
@@ -459,6 +470,7 @@
                 <option value="BioHorizons Tapered Pro">BioHorizons</option>
                 <option value="Glidewell HT">Glidewell HT</option>
                 <option value="Implant Direct Simply Iconic">Implant Direct</option>
+                <option value="Straumann">Straumann</option>
                 <option value="Zimmer">Zimmer</option>
                 <option value="Bicon">Bicon</option>
             </select>
@@ -467,8 +479,12 @@
         <div class="form-group">
             <label for="implantCrownImpScanbody">Scanbody used:</label>
             <select id="implantCrownImpScanbody">
-                <option value="TruAbutment 3.5mmD">TruAbutment 3.5mmD</option>
-                <option value="TruAbutment 4.5mmD">TruAbutment 4.5mmD</option>
+                <option value="TruAbutment BioHorizons 3.5mmD">TruAbutment BH 3.5mmD</option>
+                <option value="TruAbutment BioHorizons 4.5mmD">TruAbutment BH 4.5mmD</option>
+                <option value="BioHorizons CC Regular">BioHorizons CC Regular</option>
+                <option value="BioHorizons CC Narrow">BioHorizons CC Narrow</option>
+                <option value="TruAbutment Straumann RC">TruAbutment Straumann RC</option>
+                <option value="TruAbutment Straumann NC">TruAbutment Straumann NC</option>
             </select>
         </div>
         <br>
@@ -493,6 +509,7 @@
                 <option value="Bruxzir Express">Bruxzir Express</option>
                 <option value="Glidewell">Glidewell</option>
                 <option value="Delux">Delux</option>
+                <option value="Vulcan">Vulcan</option>
             </select>
         </div>
         <br>
